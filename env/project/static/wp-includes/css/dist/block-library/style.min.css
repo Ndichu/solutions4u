@@ -1,3 +1,86 @@
+@charset "utf-8";
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+    padding: 30px 15px;
+}
+
+.heart-like-button {
+    position: relative;
+    width: 80px;
+    height: 65px;
+}
+
+.heart-like-button:before {
+    position: absolute;
+    top: 0;
+    left: 80px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+    width: 80px;
+    height: 125px;
+    border-radius: 40px 40px 0 0;
+    background-color: #FFEF3C;
+    content: "";
+    cursor: pointer;
+    transition: background .4s;
+}
+
+.heart-like-button:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+    width: 80px;
+    height: 125px;
+    border-radius: 40px 40px 0 0;
+    background-color: #FFEF3C;
+    content: "";
+    cursor: pointer;
+    transition: background .4s;
+}
+
+.heart-like-button.liked::before,
+.heart-like-button.liked::after {
+    background-color: #ff0000;
+}
+
+.heart-like-button.liked {
+    animation: liked .7s ease;
+}
+
+@keyframes liked {
+    0% {
+        transform: scale(.8);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #container {
+        height: auto;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+}
+
 @charset "UTF-8";
 #start-resizable-editor-section {
     display: none
@@ -108,7 +191,7 @@
 
 .wp-block-button.no-border-radius,
 .wp-block-button__link.no-border-radius {
-    border-radius: 0!important
+    border-radius: 0 !important
 }
 
 .is-style-outline>.wp-block-button__link,
@@ -309,13 +392,13 @@
 
 @media (max-width:599px) {
     .wp-block-column {
-        flex-basis: 100%!important
+        flex-basis: 100% !important
     }
 }
 
 @media (min-width:600px) and (max-width:781px) {
     .wp-block-column:not(:only-child) {
-        flex-basis: calc(50% - 1em)!important;
+        flex-basis: calc(50% - 1em) !important;
         flex-grow: 0
     }
     .wp-block-column:nth-child(2n) {
@@ -1389,7 +1472,7 @@ ul.has-background {
 
 @media (max-width:600px) {
     .wp-block-media-text.is-stacked-on-mobile {
-        grid-template-columns: 100%!important
+        grid-template-columns: 100% !important
     }
     .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__media {
         grid-column: 1;
@@ -1770,7 +1853,7 @@ ul.has-background {
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-link .wp-block-navigation-link__container,
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-pages-list__item,
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-pages-list__item .submenu-container {
-    background: transparent!important
+    background: transparent !important
 }
 
 @media (min-width:600px) {
@@ -2083,7 +2166,7 @@ p.has-text-color a {
 
 .wp-block-post-comments input,
 .wp-block-post-comments textarea {
-    border: 1px solid #949494
+    border: 1px solid #000000
 }
 
 .wp-block-post-comments-form input[type=submit] {
@@ -2402,7 +2485,7 @@ p.has-text-color a {
 }
 
 .wp-block-separator.is-style-dots {
-    background: none!important;
+    background: none !important;
     border: none;
     text-align: center;
     width: none;
@@ -3350,12 +3433,12 @@ pre.wp-block-verse {
     padding: 0;
     position: absolute;
     width: 1px;
-    word-wrap: normal!important
+    word-wrap: normal !important
 }
 
 .screen-reader-text:focus {
     background-color: #ddd;
-    clip: auto!important;
+    clip: auto !important;
     -webkit-clip-path: none;
     clip-path: none;
     color: #444;
@@ -3369,4 +3452,7 @@ pre.wp-block-verse {
     top: 5px;
     width: auto;
     z-index: 100000
+}
+
+z-index: 100000
 }

@@ -7169,3 +7169,44 @@ screen and (-ms-high-contrast:active) {
     margin-top: .1875em;
     margin-bottom: .1875em
 }
+
+margin: 16px 0 0;
+display: block
+}
+.wc-block-active-filters .wc-block-active-filters__list-item-operator {
+    font-weight: 400;
+    font-style: italic
+}
+.wc-block-active-filters .wc-block-active-filters__list-item-name {
+    font-weight: 700;
+    display: block;
+    position: relative;
+    padding: 0 16px 0 0
+}
+.wc-block-active-filters .wc-block-active-filters__list-item-remove {
+    background: transparent;
+    border: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 16px;
+    width: 16px;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin: -8px 0 0;
+    color: currentColor
+}
+.wc-block-active-filters .wc-block-active-filters__list--chips li,
+.wc-block-active-filters .wc-block-active-filters__list--chips ul {
+    display: inline
+}
+.wc-block-active-filters .wc-block-active-filters__list--chips .wc-block-active-filters__list-item-type {
+    display: none
+}
+.wc-block-active-filters .wc-block-active-filters__list--chips .wc-block-components-chip {
+    font-size: .875em;
+    margin-top: .1875em;
+    margin-bottom: .1875em
+}

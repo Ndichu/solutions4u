@@ -678,7 +678,7 @@
                             <div class="edgtf-column-content edgtf-grid-col-3">
                                 <div id="text-4" class="widget edgtf-footer-column-1 widget_text">
                                     <div class="edgtf-widget-title-holder">
-                                        <h5 class="edgtf-widget-title">about us</h5>
+                                        <h5 class="edgtf-widget-title">About us</h5>
                                     </div>
                                     <div class="textwidget">
                                         <p>We are smart Solutions4u. The Award winning service agency for all your design and programming solutions.
@@ -705,12 +705,13 @@
                                         <li class="edgtf-tweet-holder">
                                             <div class="edgtf-twitter-icon"><i class="social_twitter"></i></div>
                                             <div class="edgtf-tweet-text">
-                                                <a target="_blank" href="#">@RobWattCT</a> Hey, please DM us so we can provide more details. Thanks! </div>
+                                                <a target="_blank" href="#">@SS4U</a> Hey, please DM us so we can provide more details. Thanks! </div>
                                         </li>
                                         <li class="edgtf-tweet-holder">
                                             <div class="edgtf-twitter-icon"><i class="social_twitter"></i></div>
+                                           
                                             <div class="edgtf-tweet-text">
-                                                Here comes La Comète! ☄️ <a target="_blank" href="#">https://t.co/ApIk6kk3Tt</a> This stellar <span>#WordPress</span> theme is made for any type of modern… <a target="_blank" href="https://t.co/h2ZWqjR78O">https://t.co/h2ZWqjR78O</a>                                                </div>
+                                                Giving you the best ☄️ <a target="_blank" href="#"></a> The <span>Award winning service agency</span> for all your design and programming solutions. <a target="_blank" href="#">https://smartsolutions4u.com</a>                                                </div>
                                         </li>
                                     </ul>
                                 </div>
@@ -945,6 +946,14 @@
         };
         /* ]]> */
     </script>
+    <script>
+        $(function(){
+            $(document).one('click', '.like-review', function(e) {
+                $(this).html('<i class="fa fa-heart" aria-hidden="true"></i> You liked this');
+                $(this).children('.fa-heart').addClass('animate-like');
+            });
+        });
+    </script>
     <script type='text/javascript' src='{% static 'wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js'%}' id='woocommerce-js'></script>
     <script type='text/javascript' id='wc-cart-fragments-js-extra'>
         /* <![CDATA[ */
@@ -958,18 +967,7 @@
         /* ]]> */
     </script>
     <script type='text/javascript' src='wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js' id='wc-cart-fragments-js'></script>
-    <script type='text/javascript' id='ppress-frontend-script-js-extra'>
-        /* <![CDATA[ */
-        var pp_ajax_form = {
-            "ajaxurl": "https:\/\/pxlz.qodeinteractive.com\/wp-admin\/admin-ajax.php",
-            "confirm_delete": "Are you sure?",
-            "deleting_text": "Deleting...",
-            "deleting_error": "An error occurred. Please try again.",
-            "nonce": "9e878162ce",
-            "disable_ajax_form": "false"
-        };
-        /* ]]> */
-    </script>
+    
     <script type='text/javascript' src='{% static 'wp-content/plugins/wp-user-avatar/assets/js/frontend.min.js'%}' id='ppress-frontend-script-js'></script>
     <script type='text/javascript' src='{% static 'script/js/gtm4wp-form-move-tracker.js'%}' id='gtm4wp-form-move-tracker-js'>
     </script>
