@@ -18,6 +18,21 @@ def faqs(request):
 def contact(request):
     return render(request, 'contact-us.html', {})
 
+def hireweb(request):
+    return render(request, 'hireweb.html', {})
+
+
+def hireapp(request):
+    return render(request, 'hireapp.html', {})
+
+
+def hiredes(request):
+    return render(request, 'hiregd.html', {})
+
+def hiresom(request):
+    return render(request, 'hiresm.html', {})
+
+
 def job(request):
     return render(request, 'job.html', {})
 
@@ -48,16 +63,81 @@ def portfolio6(request):
 def casestudy(request):
     return render(request, 'casestudy.html', {})
 
+def contact_mail(request):
+    if request.method == "POST":
+        message = request.POST.get('message')
+        subject = request.POST.get('subject')
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        send_mail(name + ' reached out for business or inquiry with the subject:... '+ subject + ' ...and this is the used email address- '+ email, message, email,['georgemiriendichu@gmail.com'],)
+
+        return render(request, 'contact-us.html',{'name':name})
+
+    else: 
+        return render(request, 'contact-us.html',{})
+
+def contact_web(request):
+    if request.method == "POST":
+        message = request.POST.get('message')
+        hire = request.POST.get('hire')
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        send_mail(name + ' wants to hire a:... '+ hire + ' ...and this is the used email address- '+ email, message, email,['georgemiriendichu@gmail.com'],)
+
+        return render(request, 'hireweb.html',{'name':name})
+
+    else: 
+        return render(request, 'hireweb.html',{})
+
+def contact_app(request):
+    if request.method == "POST":
+        message = request.POST.get('message')
+        hire = request.POST.get('hire')
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        send_mail(name + ' wants to hire a:... '+ hire + ' ...and this is the used email address- '+ email, message, email,['georgemiriendichu@gmail.com'],)
+
+        return render(request, 'hireapp.html',{'name':name})
+
+    else: 
+        return render(request, 'hireapp.html',{})
+
+
+def contact_media(request):
+    if request.method == "POST":
+        message = request.POST.get('message')
+        hire = request.POST.get('hire')
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        send_mail(name + ' wants to hire a:... '+ hire + ' ...and this is the used email address- '+ email, message, email,['georgemiriendichu@gmail.com'],)
+
+        return render(request, 'hiresm.html',{'name':name})
+
+    else: 
+        return render(request, 'hiresm.html',{})
+
+def contact_design(request):
+    if request.method == "POST":
+        message = request.POST.get('message')
+        hire = request.POST.get('hire')
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        send_mail(name + ' wants to hire a:... '+ hire + ' ...and this is the used email address- '+ email, message, email,['georgemiriendichu@gmail.com'],)
+
+        return render(request, 'hiregd.html',{'name':name})
+
+    else: 
+        return render(request, 'hiregd.html',{})
+
 def send_mail_plain_with_file(request):
-    subject = request.POST.get('subject', '')
-    message = request.POST.get('message', '')
-    name = request.POST.get('name', '')
-    mail_id = request.POST.get('email', '')
-    email=EmailMessage(subject,message,name,EMAIL_HOST_USER,[mail_id])
-    email.content_subtype = 'html'
+    if request.method == "POST":
+        message = request.POST.get('message')
+        hire = request.POST.get('hire')
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        send_mail(name + 's Job application as a '+ hire + ' from user email '+ email, message, email,['georgemiriendichu@gmail.com'],)
 
-    file = request.FILES['file']
-    email.attach(file.name, file.read(), file.content_type)
+        return render(request, 'job.html',{'name':name})
 
-    email.send()
-    return HttpResponse("Sent")
+    else: 
+        return render(request, 'job.html',{})

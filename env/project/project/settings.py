@@ -10,6 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
+import environ
+env = environ.Env()
+environ.Env.read_env()
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -21,7 +24,7 @@ STATIC_DIR=os.path.join(BASE_DIR,'static')
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-s=4k&(x&bk(=89$)25+)u4sd1+28z&o(lm1yxy@z@ui*-l++)*'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -128,9 +131,13 @@ STATICFILES_DIRS=[STATIC_DIR, os.path.join(BASE_DIR,"static")]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'george.ndichu.official@gmail.com '
-EMAIL_HOST_PASSWORD = 'manager@123'
+EMAIL_HOST_USER = env('email_user')
+EMAIL_HOST_PASSWORD = env('email_pass')
 EMAIL_PORT = 587
